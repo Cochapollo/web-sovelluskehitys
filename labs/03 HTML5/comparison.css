@@ -1,17 +1,27 @@
 thead{
     color: #ffffff;
     background-color: red;
-    margin: 0px;
-    padding: 0px;
-}
-tr{
 
-    border: 1px black;
 }
+
 .kappa{
     font-weight: bold;
     text-transform: uppercase;
+    border-right: solid black 1px;
+}
+
+caption{
+    text-transform: uppercase;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: #8699A4;
 }
 table{
-    border: black 1px;
+    border: solid black 1px;
+    border-collapse: collapse;
+
 }
