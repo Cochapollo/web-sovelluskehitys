@@ -1,0 +1,10 @@
+.columns{
+    column-count: 3;
+}
+figure#floating {
+    float: right;
+}
+.title{
+
+    text-align: center;
+}
