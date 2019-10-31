@@ -12,51 +12,58 @@
 		<h1>Turnitin</h1>
 		<form  lang="fi" action="">
 			<div>
-				Name: <input type="text" name="studentname"/>
+				Name: <input type="text" name="studentname" placeholder="Name"/>
 			</div>
 			<div>
-				Student id: <input type="text" name="id"  />
+				Student id: <input type="text" name="id" pattern="[0-9]{5,10}" placeholder="5-10 numbers" autofocus required/>
 			</div>
 			<div>
 				Email:
-				<!--
-				Make an input named "email"
-				-->
+				<input type="email" name="email" placeholder="Email">
 			</div>
 			<div>
 				Assignment:
-				<!--
-				Make an input named "assignment"
-				-->
+				<input type="text" name="assignment" >
 				
 			</div>
 
 			<div>
-				Code:
-				<!--
-				Make an input named "code" which is a text area to put student's code into.
-				-->
+				<p>Code</p>
+				<textarea name="code" rows="10" cols="20" placeholder="Input your code here"></textarea>
 				
 			</div>
 			<div>
 				Cheat:
-			<!--
-				Make an input named "cheat" which is a check box the student must check.
-			-->
+			<input type="checkbox" name="cheat" >
 			</div>
 			<div>
-				Pay:
+
 			<!--
 				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
 			-->
+
+					<fieldset>
+						<legend>Pay</legend>
+						<label><input type="radio" name="pay" value="visa"> Visa</label><br>
+						<label><input type="radio" name="pay" value="paypal"> PayPal</label><br>
+						<label><input type="radio" name="pay" value="mastercard">Mastercard</label>
+					</fieldset>
+
 			</div>
 			<div>
 				Score:
 			<!--
 				Make an input named "score" which is a list of choices for the score 
 			-->
+				<select>
+					<option value="o1">1</option>
+					<option value="o2">2</option>
+					<option value="o3">3</option>
+					<option value="o4">4</option>
+					<option value="o5">5</option>
+				</select>
 			</div>
-			<input type="submit" />
+			<input type="submit" value="Submit"/>
 		</form>
 		<a href="http://jigsaw.w3.org/css-validator/check/referer">Validate</a>
 	</body>
