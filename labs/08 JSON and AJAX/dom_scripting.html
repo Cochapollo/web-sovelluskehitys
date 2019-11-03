@@ -17,7 +17,7 @@
         // then add a click listener
         var helloButton = window.qs('#hello');
         var clickAction = function() { alert('Well HELLO!'); };
-        window.$live(helloButton, 'click', clickAction);
+        U.addEvent(helloButton, 'click', clickAction);
 
         // this one removes the listener after a click
         var helloOnce = window.qs('#hi');
