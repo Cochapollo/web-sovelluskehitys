@@ -15,19 +15,19 @@
 
         // first select the hello button
         // then add a click listener
-        var helloButton = U.$('hello');
+        var helloButton = window.qs('#hello');
         var clickAction = function() { alert('Well HELLO!'); };
-        U.addEvent(helloButton, 'click', clickAction);
-        
+        window.$live(helloButton, 'click', clickAction);
+
         // this one removes the listener after a click
-        var helloOnce = U.$('hi');
+        var helloOnce = window.qs('#hi');
         var alertOnce = function() {
             alert('Well HELLO!');
             U.removeEvent(helloOnce, 'click', alertOnce);
         };
         U.addEvent(helloOnce, 'click', alertOnce);
 
-        var writeText = U.$('write');
+        var writeText = window.qs('#write');
         U.addEvent(writeText, 'click', function() {
             U.setText('output', "Writing some new text for you.");
         });

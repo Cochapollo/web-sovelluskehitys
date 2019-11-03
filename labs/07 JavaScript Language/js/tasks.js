@@ -37,10 +37,31 @@ function addTask() {
     return false;
     
 } // End of addTask() function.
+function u(){
+    var output = document.getElementById('output');
+    var message = '';
+    var uniqueArray = [];
+
+    // Loop through array values
+
+    for(i=0; i < tasks.length; i++){
+        if(uniqueArray.indexOf(tasks[i]) === -1) {
+            uniqueArray.push(tasks[i]);
+        }
+    }
+   tasks = uniqueArray;
+    message = '<h2>To-Do</h2><ol>';
+    for (var i = 0, count = tasks.length; i < count; i++) {
+        message += '<li>' + tasks[i] + '</li>';
+    }
+    message += '</ol>';
+    output.innerHTML = message;
+}
 
 // Initial setup:
 function init() {
     'use strict';
     document.getElementById('theForm').onsubmit = addTask;
+    document.getElementById('duplicates').onclick = u;
 } // End of init() function.
 window.onload = init;
