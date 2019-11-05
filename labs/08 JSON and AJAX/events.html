@@ -11,13 +11,30 @@
   <script>
 window.onload = function() {
 	var div = document.getElementById("clickme");
+	var div2 = document.getElementById("ez");
 	if (div.addEventListener) {
 		div.addEventListener("click", handleClick, false);
-	} else if (div.attachEvent) {
+	}
+	if(div2.addEventListener){
+	  div2.addEventListener("mouseover",handleMouseover,false);
+    }
+	if(div.attachEvent){
+	  div.attachEvent("mouseover",handleMouseover);
+    }
+	else if (div.attachEvent) {
 		div.attachEvent("click", handleClick);
 	}
 };
-
+function handleMouseover(e) {
+  var evt = e || window.event;
+  var target;
+  if(evt.target){
+    target = evt.target;
+  }else{
+    target = evt.srcElement;
+  }
+  alert("You hovered over " +target.id);
+}
 function handleClick(e) {
 	var evt = e || window.event;
 	var target;
@@ -33,5 +50,6 @@ function handleClick(e) {
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<span id="ez">Ez clap</span>
 </body>
 </html>
