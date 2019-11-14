@@ -15,7 +15,7 @@ title1.innerHTML = "Title";
 year1.innerHTML = "Year of publication";
 headings.appendChild(title1);
 headings.appendChild(year1);
-list.appendChild(headings)
+list.appendChild(headings);
 for (var i=0; i < books.length; i++) {
 	console.log(books[i].title);
 	var item = document.createElement('tr');
