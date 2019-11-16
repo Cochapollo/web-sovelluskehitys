@@ -13,17 +13,28 @@ document.querySelector('#addPage button').onclick = function() {
 	console.log('add note');
 	var title = document.querySelector('#addPage input').value;
 	var note = document.querySelector('#addPage textarea').value;
+	var noteObj = {
+		title: title,
+		note: note
+	};
+	notes[notes.length] = noteObj;
+
+	document.querySelector('#addPage input').value = '';
+	document.querySelector('#addPage textarea').value = '';
+	loadList();
 };
 
 /*
  * handles navigation between the add and edit 'screens'
  */ 
 document.querySelector('nav > ul > li:nth-child(1)').onclick = function() {
-	console.log('first link clicked');
+	document.getElementById("addPage").style.display = '';
+	document.getElementById("editPage").style.display = "none"
 };
 
 document.querySelector('nav > ul > li:nth-child(2)').onclick = function() {
-	console.log('second link clicked');
+	document.getElementById('editPage').style.display = '';
+	document.getElementById("addPage").style.display = "none"
 };
 
 
