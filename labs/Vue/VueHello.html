@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p id="message">{{ message }}</p>
+    <input type="text" id="list-input">
+    <input type="submit" id="list-submit" v-on:click="vaihda">
+
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello world'
+        },
+        methods: {
+            vaihda: function (event) {
+                let item = document.getElementById("list-input").value;
+                document.getElementById("message").innerHTML = item;
+            }
+        }
+    })
+</script>
+</body>
+</html>

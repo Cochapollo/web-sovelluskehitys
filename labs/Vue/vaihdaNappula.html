@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <span v-if="seen">Now you see me</span>
+    <button v-on:click="vaihda">Näytä/Piilota</button>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello world'
+        },
+        data: {
+            seen: true
+        },
+        methods: {
+            vaihda: function() {
+                this.seen = !this.seen;
+
+            }
+        }
+    })
+</script>
+</body>
+</html>
