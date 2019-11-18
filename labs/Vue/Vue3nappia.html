@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p id="message">0</p>
+    <button v-on:click="plus">plus</button>
+    <button v-on:click="reset">reset</button>
+    <button v-on:click="minus">minus</button>
+
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 0
+        },
+        methods: {
+            plus: function () {
+                this.message++;
+                document.getElementById("message").innerHTML = this.message;
+            },
+            reset: function () {
+                this.message = 0;
+                document.getElementById("message").innerHTML = this.message;
+            },
+            minus: function () {
+                this.message--;
+                document.getElementById("message").innerHTML = this.message;
+            }
+        }
+    })
+</script>
+</body>
+</html>
